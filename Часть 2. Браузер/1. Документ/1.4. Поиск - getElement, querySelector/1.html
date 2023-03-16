@@ -1,0 +1,93 @@
+<!-- 
+Поиск элементов
+важность: 4
+Вот документ с таблицей и формой.
+
+Как найти?…
+
+Таблицу с id="age-table".
+Все элементы label внутри этой таблицы (их три).
+Первый td в этой таблице (со словом «Age»).
+Форму form с именем name="search".
+Первый input в этой форме.
+Последний input в этой форме.
+Откройте страницу table.html в отдельном окне и используйте 
+для этого браузерные инструменты разработчика.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="search">
+      <label
+        >Search the site:
+        <input type="text" name="search" />
+      </label>
+      <input type="submit" value="Search!" />
+    </form>
+
+    <hr />
+
+    <form name="search-person">
+      Search the visitors:
+      <table id="age-table">
+        <tbody>
+          <tr>
+            <td>Age:</td>
+            <td id="age-list">
+              <label>
+                <input type="radio" name="age" value="young" />less than
+                18</label
+              >
+              <label>
+                <input type="radio" name="age" value="mature" />18-50</label
+              >
+              <label>
+                <input type="radio" name="age" value="senior" />more than
+                50</label
+              >
+            </td>
+          </tr>
+
+          <tr>
+            <td>Additionally:</td>
+            <td>
+              <input type="text" name="info[0]" />
+              <input type="text" name="info[1]" />
+              <input type="text" name="info[2]" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input type="submit" value="Search!" />
+    </form>
+    <script>
+      const ageTable = document.querySelector("#age-table");
+
+      const labels = ageTable.getElementsByTagName("label");
+
+      const firstTdElement = ageTable.querySelectorAll("td")[0];
+
+      const searchForm = document.search;
+
+      const firstInput = searchForm.querySelector("input");
+
+      let inputs = searchForm.querySelectorAll("input");
+      const lastInput = searchForm.querySelectorAll("input")[inputs.length - 1];
+
+      console.log("ageTable", ageTable);
+      console.log("labels", labels);
+      console.log("firstTdElement", firstTdElement);
+      console.log("searchForm", searchForm);
+      console.log("firstInput", firstInput);
+      console.log("lastInput", lastInput);
+    </script>
+  </body>
+</html>

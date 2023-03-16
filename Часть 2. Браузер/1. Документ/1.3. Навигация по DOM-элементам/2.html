@@ -1,0 +1,31 @@
+<!-- 
+    // Вопрос о соседях
+    // важность: 5
+    // Если elem – произвольный узел DOM-элемента…
+
+    // Правда, что elem.lastChild.nextSibling всегда равен null?
+    // Да, т.к. lastChild - последний элемент у elem
+
+    // Правда, что elem.children[0].previousSibling всегда равен null ?
+    // Нет, пример ниже
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      some text
+      <div class="inner">inner block</div>
+    </div>
+    <script>
+      const main = document.querySelector(".main");
+      console.log(main.children[0].previousSibling === null); //false
+    </script>
+  </body>
+</html>

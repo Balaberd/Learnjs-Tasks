@@ -1,0 +1,46 @@
+<!-- 
+// В чём отличие CSS-свойств width и clientWidth
+// важность: 5
+// В чём отличие между getComputedStyle(elem).width и elem.clientWidth?
+
+// Укажите хотя бы 3 отличия, лучше – больше. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .example {
+        width: 100px;
+        height: 100px;
+      }
+      .example_third {
+        padding: 15px;
+      }
+      .example_fourth {
+        overflow-y: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="example example_first"></div>
+    <span class="example example_second">some text</span>
+    <div class="example example_third"></div>
+    <div class="example example_fourth"></div>
+
+    <script>
+      const examples = document.querySelectorAll(".example");
+      examples.forEach((elem) => {
+        console.log(
+          `
+          clientWidth:${elem.clientWidth} 
+          getComputedStyle:${getComputedStyle(elem).width}`
+        );
+      });
+    </script>
+  </body>
+</html>

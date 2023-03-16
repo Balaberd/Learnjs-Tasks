@@ -1,0 +1,45 @@
+<!-- 
+    Почему остаётся "aaa"?
+    важность: 1
+    В примере ниже вызов table.remove() удаляет таблицу из документа.
+
+    Но если вы запустите его, вы увидите, что текст "aaa" все еще виден.
+
+    Почему так происходит?
+
+    <table id="table">
+    aaa
+    <tr>
+        <td>Тест</td>
+    </tr>
+    </table>
+
+    <script>
+    alert(table); // таблица, как и должно быть
+
+    table.remove();
+    // почему в документе остался текст "ааа"?
+    </script>
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table id="table">
+      aaa
+      <tr>
+        <td>Тест</td>
+      </tr>
+    </table>
+    <script>
+      const body = document.body;
+      console.log(body); // aaa выносится за table
+    </script>
+  </body>
+</html>
